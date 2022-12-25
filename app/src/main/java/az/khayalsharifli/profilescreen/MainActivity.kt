@@ -46,6 +46,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+// Here we use lazy column because we can scroll on the screen if there can be more fields.
 @Composable
 fun Profile() {
     val profile = ProfileFactory.getProfileData()
@@ -86,7 +87,7 @@ fun Profile() {
                     )
 
                     Text(
-                        text = "PROFILE",
+                        text = "Profile".uppercase(),
                         modifier = Modifier,
                         color = Color.White,
                         style = Typography.body2
@@ -121,7 +122,7 @@ fun Profile() {
         item {
             Column {
                 Text(
-                    text = "Khayal Sharifli",
+                    text = "${profile.firstName} ${profile.lastName}",
                     textAlign = TextAlign.Center,
                     modifier = Modifier
                         .fillMaxWidth()
